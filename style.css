@@ -9,17 +9,16 @@ body {
   padding: 0px;
   margin: 0px;
   height: 100vh;
-  background: rgb(208, 159, 196);
+  background: rgb(195, 175, 175);
   background: linear-gradient(
-    146deg,
-    rgba(208, 159, 196, 0.7763480392156863) 0%,
-    rgba(158, 56, 81, 0.7931547619047619) 100%
+    0deg,
+    rgba(195, 175, 175, 0.7763480392156863) 0%,
+    rgba(191, 127, 127, 1) 100%
   );
-  background-repeat: no-repeat;
 }
 
 nav {
-  background-color: rgb(199, 70, 70, 0.781);
+  background-color: rgba(150, 48, 48, 0.966);
   display: flex;
   justify-content: space-between;
   color: #ffe7e7;
@@ -64,12 +63,18 @@ nav {
   padding-bottom: 3px;
 }
 
+.nav-links a.active {
+  transition: 0.1s linear;
+  border-bottom: 2px solid #ffe7e7;
+  padding-bottom: 3px;
+}
+
 .container {
   width: 80%;
   height: 70vh;
   background-color: rgba(255, 255, 255, 0.06);
   -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   margin: 60px auto;
   box-shadow: 10px 10px 22px rgba(0, 0, 0, 0.2);
   border-radius: 30px;
@@ -83,20 +88,33 @@ nav {
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.151);
 }
 
+.sound-controls {
+  float: right;
+  margin: 20px 25px;
+}
+
+#speaker,
+#mute {
+  height: 35px;
+  filter: invert(74%);
+  cursor: pointer;
+}
+
 .pomo-btn,
 .short-break-btn,
 .long-break-btn {
   background-color: transparent;
   border: none;
   background-color: rgba(255, 255, 255, 0.082);
-  width: 30rem;
+  width: 100%;
   padding: 15px;
   font: inherit;
-  color: #484141;
+  color: #3b3939;
   text-transform: lowercase;
   font-weight: bold;
   font-size: 22px;
   box-shadow: 0 1px 2px rgba(53, 52, 52, 0.205);
+  transition: 0.15s ease;
 }
 
 .pomo-btn {
@@ -110,14 +128,14 @@ nav {
 .short-break-btn:hover,
 .long-break-btn:hover {
   cursor: pointer;
-  background-color: rgb(199, 70, 70, 0.781);
+  background-color: rgba(150, 48, 48, 0.966);
   border: none;
-  transition: 0.15s linear;
+  transition: 0.15s ease;
   color: #ffe7e7;
 }
 
 .active {
-  background-color: rgb(199, 70, 70, 0.781);
+  background-color: rgba(150, 48, 48, 0.966);
   border: none;
   color: #ffe7e7;
 }
@@ -126,7 +144,7 @@ nav {
   width: 60%;
   height: 150px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 80px;
   display: flex;
   justify-content: center;
 }
@@ -135,33 +153,34 @@ nav {
 #second {
   font-size: 150px;
   font-weight: bolder;
-  color: #484141;
+  color: #3b3939;
 }
 
 .decrease,
 .increase {
   transform: translateY(75px);
-  background-color: rgba(255, 255, 255, 0.377);
+  background-color: rgba(150, 48, 48, 0.966);
   height: 40px;
   width: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: invert(75%);
   cursor: pointer;
+  position: fixed;
 }
 
 .decrease {
-  margin-right: 25px;
+  margin-right: 550px;
 }
 
 .increase {
-  margin-left: 25px;
+  margin-left: 550px;
 }
 
 .timer img {
   height: 25px;
+  filter: invert(70%);
 }
 
 .controls {
@@ -182,11 +201,12 @@ nav {
   display: flex;
   height: 65px;
   width: 65px;
-  background-color: rgb(199, 70, 70, 0.781);
+  background-color: rgba(150, 48, 48, 0.966);
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  margin: 6px;
+  margin: 60px;
+  cursor: pointer;
 }
 
 .play,
